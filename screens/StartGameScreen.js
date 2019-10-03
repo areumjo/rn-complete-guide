@@ -1,18 +1,22 @@
 import React from 'react';
 import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 
+import Card from '../components/Card';
+
 const StartGameScreen = props => {
     return (
         <View style={styles.screen}>
             <Text style={styles.title}>Start a New Game!</Text>
-            <View style={styles.inputContainer}>
-                <Text>Select a Number</Text>
-                <TextInput />
-                <View style={styles.buttonContainer}>
-                    <Button title="Reset" onPress={()=> {}}/>
-                    <Button title="Confirm" onPress={()=> {}}/>
+            <Card style={styles.inputContainer}>
+                <View style={styles.inputContainer}>
+                    <Text>Select a Number</Text>
+                    <TextInput />
+                    <View style={styles.buttonContainer}>
+                        <View style={styles.button}><Button title="Reset" onPress={()=> {}} color="#c717fc"/></View>
+                        <View style={styles.button}><Button title="Confirm" onPress={()=> {}} color="#f7287b"/></View>
+                    </View>
                 </View>
-            </View>
+            </Card>
         </View>
     )
 };
@@ -31,20 +35,14 @@ const styles = StyleSheet.create({
         width: 300,
         maxWidth: '80%',
         alignItems: 'center',
-        shadowColor: 'black',
-        shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 6,
-        shadowOpacity: 0.26,
-        backgroundColor: 'white',
-        elevation: 5,
-        padding: 20,
-        borderRadius: 10,
     },
     buttonContainer: {
         flexDirection: 'row',
         width: '100%',
         justifyContent: 'space-between',
-        paddingHorizontal: 15
+    },
+    button: {
+        width: 100,
     }
 });
 
